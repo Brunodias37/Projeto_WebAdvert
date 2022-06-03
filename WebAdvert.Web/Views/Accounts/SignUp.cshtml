@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    ViewData["Title"] = "SignUp Page";
+
+}
+@model WedAdvert.Web.Models.Accounts.SignupModel;
+
+
+@{
+    <div class="row">
+        <div class="cold-md-4">
+            <form method="post" asp-controller="AccountsController" asp-action="SignUp">
+                <h4>Create new Account</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input accept="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                  <label asp-for="Password"></label>
+                    <input accept="Password" class="form-control"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                              
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input accept="ConfirmPassword" class="form-control"/>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn About <a href="https://docs.microsoft.com/aspnet/core">building Web app with ASP.NET Core</a></p>
+
+
+</div>
