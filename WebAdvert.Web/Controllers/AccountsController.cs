@@ -1,11 +1,10 @@
-﻿using Amazon.Extensions.CognitoAuthentication;
+﻿using Amazon.AspNetCore.Identity.Cognito;
+using Amazon.Extensions.CognitoAuthentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using WedAdvert.Web.Models.Accounts;
-using Amazon.AspNetCore.Identity.Cognito;
-using Amazon.Runtime.Internal.Transform;
 using WebAdvert.Web.Models.Accounts;
+using WedAdvert.Web.Models.Accounts;
 
 namespace WedAdvert.Web.Controllers
 {
@@ -22,7 +21,6 @@ namespace WedAdvert.Web.Controllers
             _pool = pool;
 
         }
-
 
         public async Task<IActionResult> SignUp()
         {
@@ -60,8 +58,6 @@ namespace WedAdvert.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Confirm(ConfirmModel model)
         {
-
-
             return View(model);
         }
 
@@ -77,7 +73,6 @@ namespace WedAdvert.Web.Controllers
                     return View(model);
                 }
 
-                
 
                 //confirma o email
                 var result = await _userManager.ConfirmEmailAsync(user, model.Code);
@@ -100,5 +95,7 @@ namespace WedAdvert.Web.Controllers
 
             return View(model);
         }
+
+
     }
 }
