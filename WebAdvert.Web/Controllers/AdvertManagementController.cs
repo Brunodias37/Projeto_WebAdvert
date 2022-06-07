@@ -52,7 +52,7 @@ namespace WebAdvert.Web.Controllers
                                     message:"Could no upload the image to file repository. Please see the logs for details.");
                         }
 
-                        //chamada a API para confirmar o advertisement
+                        
                         var confirmModel = new ConfirmAdvertRequest()
                         {
                             Id = id,
@@ -86,9 +86,6 @@ namespace WebAdvert.Web.Controllers
 
             return View();
         }
-
-
-        
 
     }
 }

@@ -12,8 +12,5 @@ namespace WebAdvert.Web.ServiceClients
 
         }
 
-
-
-
     }
 }
